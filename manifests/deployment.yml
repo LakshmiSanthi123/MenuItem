@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "dnazurekubernate-ef30"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "dnazurekubernate-ef30"
+  template:
+    metadata:
+      labels:
+        app: "dnazurekubernate-ef30"
+    spec:
+      containers:
+        - name: "dnazurekubernate-ef30"
+          image: "kubercontainer.azurecr.io/dnazurekubernate"
+          ports:
+          - containerPort: 80
